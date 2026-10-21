@@ -28,8 +28,6 @@ services:
       - ./schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
       - ./init-db.sh:/docker-entrypoint-initdb.d/0-init-db.sh
       - ./create-admin.sh:/docker-entrypoint-initdb.d/2-create-admin.sh
-    env_file:
-      - .env.example
     environment:
       - POSTGRES_USER=${POSTGRES_USER:-sports_league_owner}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-sports_league_password}
